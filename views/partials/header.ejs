@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Yelcamp</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io.connect("http://localhost/6039");
+      socket.on("testing", function(data) {
+        console.log(data);
+        // socket.emit("testing", { my: "data" });
+      });
+    </script>
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid jumbotron">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/WebChat">CHat WEb</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- <p>header connected</p> -->
+  </body>
+</html>
