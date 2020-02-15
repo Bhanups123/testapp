@@ -7,11 +7,13 @@ const userSchema = mongoose.Schema({
   },
   email: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   password: {
     type: String,
-    required: true
+    required: true,
+    select: false //for not responding in find()
   },
   date: {
     type: Date,

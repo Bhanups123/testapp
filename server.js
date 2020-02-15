@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
 const app = express();
-
+const socket = require("socket.io");
 const user = require("./routes/user");
 const dashboard = require("./routes/dashboard");
 
@@ -19,9 +19,18 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 require("./config/passport")(passport);
 
+const port = process.env.PORT || 6039;
+const server = app.listen(port, () =>
+  console.log(`Server is running on PORT ${port}`)
+);
+
+const io = socket(server);
+
+io.on("connection", socket => {
+  console.log("New User Connected");
+  socket.emit("testing", { username: "bhanu" });
+});
+
 //use routes
 app.use(user);
 app.use(dashboard);
-
-const port = process.env.PORT || 6039;
-app.listen(port, () => console.log(`Server is running on PORT ${port}`));
