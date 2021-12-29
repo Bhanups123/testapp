@@ -1,6 +1,5 @@
 import unittest
-import start
-
+import mytest.start as start
 
 class EnhancementTestCase(unittest.TestCase):
     def test_hello(self):
