@@ -23,8 +23,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        python -c "import src.temp as temp"
     - name: Test with pytest
       working-directory: ./src/
       run: |
+        python -c "import src.temp as temp"
         pytest
