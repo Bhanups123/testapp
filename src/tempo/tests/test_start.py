@@ -1,5 +1,5 @@
 import unittest
-import src.tempo.temp.start as start
+import temp.start as start
 
 class EnhancementTestCase(unittest.TestCase):
     def test_hello(self):
