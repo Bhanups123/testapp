@@ -26,5 +26,5 @@ jobs:
     - name: Test with pytest
       working-directory: ./src/
       run: |
-        python -c "import src.temp as temp"
+        python -c "import temp"
         pytest
