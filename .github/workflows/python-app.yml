@@ -23,7 +23,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-        python -c "import src.tempo as tempo"
+        
+    - name: Install package
+      run: |
+        pip install -e .[test]
 
     - name: Test with pytest
       working-directory: ./src/tempo
