@@ -1,5 +1,9 @@
 import unittest
+print(sys.path)
+
 import temp.start as start
+import sys
+
 class EnhancementTestCase(unittest.TestCase):
     def test_hello(self):
         start.hello()
