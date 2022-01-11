@@ -3,7 +3,7 @@ import sys
 
 print(sys.path)
 
-import start
+import temp.start as start
 
 class EnhancementTestCase(unittest.TestCase):
     def test_hello(self):
