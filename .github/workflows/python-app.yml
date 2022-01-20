@@ -14,11 +14,8 @@ jobs:
     environment: test
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v2
-      with:
-        python-version: "3.10"
-
-    - name: Test 
-      run: echo ${{env.MY_NAME}}
+      - shell: bash
+        env:
+          MY_NAME: ${{ secrets.MY_NAME }}
+        run: |
+          echo "$MY_NAME"
