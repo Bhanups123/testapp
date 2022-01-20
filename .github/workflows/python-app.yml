@@ -1,27 +1,17 @@
-name: ETL unit tests
+name: Python application
 
 on:
-  push:
-    paths:
-      - 'etl/**'
+  pull_request:
+    branches: [ master ]
 
 jobs:
-  tests:
+  build:
+
     runs-on: ubuntu-latest
-    environment: test
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Set up Python 3.7
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.7.10"
-
-      - name: Install dependencies and run tests
-        working-directory: ./etl
+      - shell: bash
+        env:
+          MY_NAME: ${{ secrets.MY_NAME }}
         run: |
-          pip install pipenv
-          pipenv install '-e .'
-          pipenv install pytest
-          pipenv run python -m pytest
+          echo "$MY_NAME"
