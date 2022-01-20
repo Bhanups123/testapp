@@ -1,4 +1,4 @@
-import pandas as pd
+import pandas 
 
 def hello():
     f = open("./tempo.csv", 'x')
