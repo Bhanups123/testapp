@@ -8,6 +8,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    environment: test
 
     steps:
       - shell: bash
