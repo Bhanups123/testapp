@@ -21,6 +21,7 @@ jobs:
       - name: Install dependencies and run tests
         working-directory: ./etl
         run: |
-          pip install pipenv pytest
+          pip install pipenv
           pipenv install '-e .'
+          pipenv install pytest
           pipenv run python -m pytest
