@@ -1,3 +1,5 @@
+import pandas
+
 def hello():
     f = open("./tempo.csv", 'x')
     f.write('hello, there')
