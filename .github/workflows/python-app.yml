@@ -14,5 +14,7 @@ jobs:
       - shell: bash
         env:
           MY_NAME: ${{ secrets.MY_NAME }}
+        uses: actions/cache@v2
         run: |
           echo "$MY_NAME"
+
